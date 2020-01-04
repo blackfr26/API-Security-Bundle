@@ -1,0 +1,9 @@
+services:
+    desarrollo_hosting_api_security_user_provider:
+        class: DesarrolloHosting\ApiSecurityBundle\Security\User\APIUserProvider
+        
+    desarrollo_hosting_api_security_authenticator:
+        class: DesarrolloHosting\ApiSecurityBundle\Security\APIAuthenticator
+        arguments:
+            - "@monolog.logger.security"
+            - "%api_security.config%"
